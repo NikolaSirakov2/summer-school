@@ -20,8 +20,6 @@ function SignUp() {
     repeatPassword: false,
   });
 
-  console.error(users);
-
   const router = useRouter();
   const { toast } = useToast();
 
@@ -84,9 +82,7 @@ function SignUp() {
         role: defaultRole,
       };
 
-      console.error(users);
       users.push(newUser);
-      console.error(users);
 
       toast({
         title: "Account successfully created",
@@ -107,9 +103,8 @@ function SignUp() {
             <Image
               src="/blackboard2.jpg"
               alt="running"
-              layout="responsive"
-              width={16}
-              height={9}
+              width={650}
+              height={600}
               className="lg:rounded-2xl max-w-[30vw]"
             />
           </div>
@@ -117,9 +112,8 @@ function SignUp() {
             <Image
               src="/sport1.jpg"
               alt="running"
-              layout="responsive"
-              width={16}
-              height={9}
+              width={650}
+              height={600}
               className="lg:rounded-2xl max-w-[30vw]"
             />
           </div>

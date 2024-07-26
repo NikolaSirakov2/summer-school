@@ -21,9 +21,9 @@ export default function Home() {
         <Image
           src="/class-room.jpg"
           alt="summer"
-          width={800} // Static width for the optimization
-          height={200} // Static height for the optimization
-          layout="responsive" // This makes the image scale based on the parent container
+          width={800} 
+          height={200} 
+          layout="responsive" 
           className="rounded-2xl lg:m-6 max-h-[45vh]"
         />
       </div>
@@ -31,9 +31,9 @@ export default function Home() {
         <Image
           src="/school-yard.jpg"
           alt="summer"
-          width={800} // Static width for the optimization
-          height={200} // Static height for the optimization
-          layout="responsive" // This makes the image scale based on the parent container
+          width={800} 
+          height={200} 
+          layout="responsive" 
           className="rounded-2xl m-6 max-h-[45vh]"
         />
       </div>
@@ -49,7 +49,7 @@ export default function Home() {
           изпълнен с нови предизвикателства и вълнуващи преживявания!
         </h2>
         <Link href="/signup">
-        <Button >Влез сега</Button>
+        <Button className="hover:bg-white hover:text-black" >Влез сега</Button>
         </Link>
       </div>
       </div>

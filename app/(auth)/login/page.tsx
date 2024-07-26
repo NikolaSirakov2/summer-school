@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import {users} from "@/data/users";
+import { users } from "@/data/users";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -14,11 +14,10 @@ function Login() {
   });
 
   const router = useRouter();
-  console.error(users);
 
   const handleClick = async (event: React.MouseEvent) => {
     const emailRegex = /\S+@\S+\.\S+/;
-    let errors = { email: false, password: false};
+    let errors = { email: false, password: false };
     if (!emailRegex.test(email)) {
       errors.email = true;
     }
@@ -32,33 +31,47 @@ function Login() {
     if (!errors.email && !errors.password) {
       event.preventDefault();
 
-    //   try {
-    //     const token = await loginUser(email, password);
-    //     console.log('Success:', token);
+      //   try {
+      //     const token = await loginUser(email, password);
+      //     console.log('Success:', token);
 
-    //     localStorage.setItem('token', token);
+      //     localStorage.setItem('token', token);
 
-    //     router.push('/dashboard');
-    //   } catch (error) {
-    //     if (error instanceof Error) {
-    //       console.error("Error:", error.message);
-    //     }
-    //     }
+      //     router.push('/dashboard');
+      //   } catch (error) {
+      //     if (error instanceof Error) {
+      //       console.error("Error:", error.message);
+      //     }
+      //     }
     }
 
     setError(errors);
+    if (!errors.email && !errors.password) {
+      const user = users.find(
+        (user) => user.email === email && user.password === password
+      );
+
+      if (user) {
+        localStorage.setItem("role", user.role);
+        if (user.role === "student" && user.grade !== undefined) {
+          localStorage.setItem("grade", user.grade);
+        }
+        router.push("/dashboard");
+      } else {
+        console.error("Error: Invalid credentials");
+      }
+    }
   };
 
   return (
     <section className="bg-white">
       <div className="lg:grid lg:min-h-[100vh] lg:grid-cols-12">
-      <div className="w-3/4 m-10 md:hidden mt-20 ml-12">
+        <div className="w-3/4 m-10 md:hidden mt-20 ml-12">
           <Image
             src="/blackboard1.jpg"
             alt="running"
-            layout="responsive"
-            width={16}
-            height={9}
+            width={950}
+            height={600}
             className="rounded-2xl"
           />
         </div>
@@ -108,11 +121,7 @@ function Login() {
 
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Link
-                  href={
-                    /\S+@\S+\.\S+/.test(email) && password !== ""
-                      ? "/dashboard"
-                      : "#"
-                  }
+                  href={"#"}
                   className="inline-block shrink-0 rounded-md border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
                   onClick={handleClick}
                 >
@@ -122,7 +131,7 @@ function Login() {
                 <p className="mt-4 text-sm text-gray-500 sm:mt-0">
                   Нямаш акаунт? &nbsp;
                   <a href="/signup" className="text-gray-700 underline">
-                    Създаи акаунт
+                    Създай акаунт
                   </a>
                   .
                 </p>
@@ -131,16 +140,16 @@ function Login() {
           </div>
         </main>
         <section className="relative h-48 items-end lg:col-span-5 lg:h-full xl:col-span-6 hidden lg:flex">
-        <div className="w-full mb-6 mr-6">
-          <Image
-            src="/blackboard3.jpg"
-            alt="running"
-            layout="responsive"
-            width={16}
-            height={9}
-            className="lg:rounded-full"
-          />
-        </div>
+          <div className="w-full mb-6 mr-6">
+            <Image
+              src="/blackboard3.jpg"
+              alt="running"
+              layout="responsive"
+              width={16}
+              height={9}
+              className="lg:rounded-full"
+            />
+          </div>
         </section>
       </div>
     </section>
