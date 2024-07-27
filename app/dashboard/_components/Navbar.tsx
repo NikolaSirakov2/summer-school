@@ -21,38 +21,17 @@ import {
   Settings,
 } from "lucide-react";
 
-const menuItems = [
-  { path: "/", label: "Home" },
-  { path: "/about", label: "About" },
-  { path: "/contact", label: "Contact" },
-  { path: "/createbook", label: "Create Book" },
-  { path: "/previewbooks", label: "My Books" },
-  { path: "/account", label: "Account" },
-  { path: "/dashboard", label: "Dashboard" },
-  { path: "/login", label: "Log out" },
-];
-
 function Header() {
   const path = usePathname();
 
   const isActive = (href: string) => path === href;
 
-  const visibleMenuItems = [
-    "/",
-    "/signup",
-    "/login",
-    "/about",
-    "/contact",
-  ].includes(path)
-    ? menuItems.slice(0, 3)
-    : menuItems.slice(3);
-
   return (
-    <header className="bg-gradient-to-br from-blue-100 via-blue-400 to-blue-500">
+    <header className="bg-gradient-to-br from-green-100 via-green-600 to-blue-500">
       <div className="mx-0 max-w-screen-3xl px-0 sm:px-1 lg:px-0">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex-1 md:flex md:items-center md:gap-12">
-            <a className="block text-primary mt-2 ml-2" href="/">
+          <div className="flex-1 md:flex md:items-center md:gap-12 lg:ml-4">
+            <a className="block text-primary mt-2 ml-2" href="/dashboard">
               <Image
                 src="/logoipsum-331.svg"
                 alt="logo"
@@ -64,7 +43,7 @@ function Header() {
 
           <div className="md:flex md:items-center md:gap-12">
             <nav aria-label="Global" className="hidden md:block">
-              {["/", "/signup", "/login", "/about", "/contact"].includes(
+              {["/", "/dashboard", "/dashboard/homeworks", "/dashboard/contacts"].includes(
                 path
               ) ? (
                 <ul className="flex items-center gap-6 text-sm">
