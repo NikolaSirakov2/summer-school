@@ -1,4 +1,4 @@
-export const grades = [
+export const schoolSubjects = [
     {
         grade: "1",
         subjects: [

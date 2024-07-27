@@ -139,14 +139,13 @@ function Login() {
             </form>
           </div>
         </main>
-        <section className="relative h-48 items-end lg:col-span-5 lg:h-full xl:col-span-6 hidden lg:flex">
+        <section className="relative h-48 lg:col-span-5 lg:h-full xl:col-span-6 hidden lg:flex items-center">
           <div className="w-full mb-6 mr-6">
             <Image
-              src="/blackboard3.jpg"
+              src="/класна-стая1.jpg"
               alt="running"
-              layout="responsive"
-              width={16}
-              height={9}
+              width={950}
+              height={500}
               className="lg:rounded-full"
             />
           </div>

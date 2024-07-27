@@ -98,7 +98,7 @@ function SignUp() {
   return (
     <section className="bg-white">
       <div className="lg:grid lg:min-h-[100vh] lg:grid-cols-12">
-        <section className="relative h-48 lg:h-full lg:col-span-5 hidden xl:col-span-6 lg:flex">
+        <section className="relative h-48 lg:h-full lg:col-span-5 hidden xl:col-span-6 lg:flex items-center">
           <div className="absolute top-2 left-0 mb-6 ml-6">
             <Image
               src="/blackboard2.jpg"

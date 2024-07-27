@@ -25,7 +25,7 @@ function Dashboard() {
       case 'student':
         return <StudentDashboard grade={grade || ''} />;
       default:
-        return <div>No role found</div>;
+        return <div></div>;
     }
   };
 

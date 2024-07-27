@@ -12,7 +12,14 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { BookPlus, CircleDollarSign, HomeIcon, LibraryBig, LogOut, Settings } from "lucide-react";
+import {
+  BookPlus,
+  CircleDollarSign,
+  HomeIcon,
+  LibraryBig,
+  LogOut,
+  Settings,
+} from "lucide-react";
 
 const menuItems = [
   { path: "/", label: "Home" },
@@ -64,30 +71,30 @@ function Header() {
                   <li>
                     <a
                       className="text-white transition hover:text-black"
-                      href="/"
+                      href="/dashboard"
                     >
                       {" "}
-                      Home{" "}
+                      Учебни предмети{" "}
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-black"
-                      href="/about"
+                      href="/dashboard/homeworks"
                     >
                       {" "}
-                      About{" "}
+                      Моите домашни{" "}
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-black"
-                      href="/contact"
+                      href="/dashboard/contacts"
                     >
                       {" "}
-                      Contact{" "}
+                      Контакти{" "}
                     </a>
                   </li>
                 </ul>
@@ -99,37 +106,27 @@ function Header() {
                       href="/dashboard"
                     >
                       {" "}
-                      Dashboard{" "}
+                      Учебни предмети{" "}
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-black"
-                      href="/createbook"
+                      href="/dashboard/homeworks"
                     >
                       {" "}
-                      Create Book{" "}
+                      Моите домашни{" "}
                     </a>
                   </li>
 
                   <li>
                     <a
                       className="text-white transition hover:text-black"
-                      href="/previewbooks"
+                      href="/dashboard/contacts"
                     >
                       {" "}
-                      My Books{" "}
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      className="text-white transition hover:text-black"
-                      href="/account"
-                    >
-                      {" "}
-                      Account{" "}
+                      Контакти{" "}
                     </a>
                   </li>
                 </ul>
@@ -162,108 +159,112 @@ function Header() {
                   className="hidden lg:block rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white shadow"
                   href="/"
                   onClick={() => {
-                    localStorage.removeItem('token');
+                    localStorage.removeItem("token");
                   }}
                 >
-                  Logout
+                  Изход
                 </a>
               )}
 
               <div className="block md:hidden">
-              <DropdownMenu>
-              <DropdownMenuTrigger className="text-black bg-white p-2 rounded">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M4 6h16M4 12h16M4 18h16"
-                        />
-                      </svg>
+                <DropdownMenu>
+                  <DropdownMenuTrigger className="text-black bg-white p-2 rounded">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M4 6h16M4 12h16M4 18h16"
+                      />
+                    </svg>
                   </DropdownMenuTrigger>
-        <DropdownMenuContent className="flex justify-center items-center w-screen h-screen mt-2 text-white bg-yellow-500">
-          <DropdownMenuGroup>
-            <DropdownMenuItem asChild>
-              <Link href="/dashboard">
-                <span
-                  className={`flex items-center ${
-                    isActive("/dashboard") ? "text-black" : ""
-                  }`}
-                >
-                  <HomeIcon className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">Home</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/dashboard/mybooks">
-                <span
-                  className={`flex items-center ${
-                    isActive("/dashboard/mybooks") ? "text-black" : ""
-                  }`}
-                >
-                  <LibraryBig className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">My Books</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/dashboard/createbook">
-                <span
-                  className={`flex items-center ${
-                    isActive("/dashboard/createbook") ? "text-black" : ""
-                  }`}
-                >
-                  <BookPlus className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">Create Book</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/dashboard/subscriptions">
-                <span
-                  className={`flex items-center ${
-                    isActive("/dashboard/subscriptions") ? "text-black" : ""
-                  }`}
-                >
-                  <CircleDollarSign className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">Subscriptions</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/account">
-                <span
-                  className={`flex items-center ${
-                    isActive("/account") ? "text-black" : ""
-                  }`}
-                >
-                  <Settings className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">Account</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-            <DropdownMenuItem asChild>
-              <Link href="/login">
-                <span
-                  className={`flex items-center ${
-                    isActive("/user/login") ? "text-black" : ""
-                  }`}
-                >
-                  <LogOut className="mr-2 h-8 w-8" />
-                  <span className="text-2xl">Log out</span>
-                </span>
-              </Link>
-            </DropdownMenuItem>
-          </DropdownMenuGroup>
-        </DropdownMenuContent>
-      </DropdownMenu>
+                  <DropdownMenuContent className="flex justify-center items-center w-screen h-screen mt-2 text-white bg-yellow-500">
+                    <DropdownMenuGroup>
+                      <DropdownMenuItem asChild>
+                        <Link href="/dashboard">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/dashboard") ? "text-black" : ""
+                            }`}
+                          >
+                            <HomeIcon className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">Home</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/dashboard/mybooks">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/dashboard/mybooks") ? "text-black" : ""
+                            }`}
+                          >
+                            <LibraryBig className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">My Books</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/dashboard/createbook">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/dashboard/createbook")
+                                ? "text-black"
+                                : ""
+                            }`}
+                          >
+                            <BookPlus className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">Create Book</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/dashboard/subscriptions">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/dashboard/subscriptions")
+                                ? "text-black"
+                                : ""
+                            }`}
+                          >
+                            <CircleDollarSign className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">Subscriptions</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/account">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/account") ? "text-black" : ""
+                            }`}
+                          >
+                            <Settings className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">Account</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild>
+                        <Link href="/login">
+                          <span
+                            className={`flex items-center ${
+                              isActive("/user/login") ? "text-black" : ""
+                            }`}
+                          >
+                            <LogOut className="mr-2 h-8 w-8" />
+                            <span className="text-2xl">Log out</span>
+                          </span>
+                        </Link>
+                      </DropdownMenuItem>
+                    </DropdownMenuGroup>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               </div>
             </div>
           </div>
