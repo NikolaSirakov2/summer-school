@@ -24,7 +24,7 @@ export const schoolSubjects = [
                 id: 1,
                 name: 'Български език и литература',
                 image: '/български–и-литература-4.jpg',
-                teacher: 'Г-н Иванов',
+                teacher: 'Г-жа Иванова',
                 homework: 'Прочетете глава 3 от книгата и напишете резюме.'
             },
             {
@@ -45,7 +45,7 @@ export const schoolSubjects = [
                 id: 4,
                 name: 'Компютърно моделиране',
                 image: '/компютърно-моделиране-4.jpg',
-                teacher: 'Г-н Иванов',
+                teacher: 'Г-жа Иванова',
                 homework: 'Създайте проста анимация с помощта на Scratch.'
             },
             {
@@ -66,7 +66,7 @@ export const schoolSubjects = [
                 id: 7,
                 name: 'Изобразително изкуство',
                 image: '/рисуване-4.jpg',
-                teacher: 'Г-н Иванов',
+                teacher: 'Г-жа Иванова',
                 homework: 'Нарисувайте пейзаж от вашето любимо място.'
             },
             {
