@@ -52,6 +52,8 @@ function Login() {
       );
 
       if (user) {
+        localStorage.setItem("First name", user.firstName);
+        localStorage.setItem("Last name", user.lastName);
         localStorage.setItem("role", user.role);
         if (user.role === "student" && user.grade !== undefined) {
           localStorage.setItem("grade", user.grade);
