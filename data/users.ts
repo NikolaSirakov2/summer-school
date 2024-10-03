@@ -17,15 +17,6 @@ export const users = [
         password: "123",
     },
     {
-        id: 3,
-        firstName: "Васко",
-        lastName: "Митев",
-        role: "student",
-        email: "vasko@mitev.com",
-        password: "123",
-        grade: "7",
-    },
-    {
         id: 4,
         firstName: "Мона",
         lastName: "Митева",

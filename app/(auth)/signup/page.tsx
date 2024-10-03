@@ -121,7 +121,7 @@ function SignUp() {
 
         <main className="flex items-center justify-center px-8 py-8 sm:px-12 lg:col-span-7 lg:px-16 lg:py-12 xl:col-span-6">
           <div className="max-w-xl lg:max-w-3xl">
-            <form action="#" className="mt-8 grid grid-cols-6 gap-6">
+            <form action="#" className="lg:mt-8 grid grid-cols-6 gap-6">
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="Password"
@@ -219,21 +219,6 @@ function SignUp() {
                 )}
               </div>
 
-              <div className="col-span-6">
-                <p className="text-sm text-gray-500">
-                  Създавайки акаунт, вие се съгласявате с нашите
-                  <a href="#" className="text-gray-700 underline">
-                    {" "}
-                    правила и условия{" "}
-                  </a>
-                  и{" "}
-                  <a href="#" className="text-gray-700 underline">
-                    политика за поверителност
-                  </a>
-                  .
-                </p>
-              </div>
-
               <div className="col-span-6 sm:flex sm:items-center sm:gap-4">
                 <Link
                   href={
@@ -257,7 +242,7 @@ function SignUp() {
               </div>
             </form>
 
-            <div className="w-full mt-6 md:hidden">
+            <div className="w-full mt-10 md:hidden">
               <Image
                 src="/school-yard2.jpg"
                 alt="running"

@@ -48,7 +48,7 @@ function NavbarText() {
           </div>
         </nav>
       
-        <div className="flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-6">
           <ul className="flex items-center gap-6 text-lg">
             <li>
               <a className="text-white transition hover:text-black" href="/dashboard">
@@ -94,7 +94,7 @@ function NavbarText() {
           </div>
         </div>
       
-        <div className="block md:hidden">
+        <div className="block md:hidden mr-2">
           <DropdownMenu>
             <DropdownMenuTrigger className="text-black bg-white p-2 rounded">
               <svg
@@ -114,39 +114,23 @@ function NavbarText() {
                   <Link href="/dashboard">
                     <span className={`flex items-center ${isActive("/dashboard") ? "text-black" : ""}`}>
                       <HomeIcon className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">Home</span>
+                      <span className="text-2xl">Учебни предмети</span>
                     </span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard/mybooks">
-                    <span className={`flex items-center ${isActive("/dashboard/mybooks") ? "text-black" : ""}`}>
+                  <Link href="/dashboard/homeworks">
+                    <span className={`flex items-center ${isActive("/dashboard/homeworks") ? "text-black" : ""}`}>
                       <LibraryBig className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">My Books</span>
+                      <span className="text-2xl">Моите домашни</span>
                     </span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard/createbook">
-                    <span className={`flex items-center ${isActive("/dashboard/createbook") ? "text-black" : ""}`}>
+                  <Link href="/dashboard/contacts">
+                    <span className={`flex items-center ${isActive("/dashboard/contacts") ? "text-black" : ""}`}>
                       <BookPlus className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">Create Book</span>
-                    </span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/dashboard/subscriptions">
-                    <span className={`flex items-center ${isActive("/dashboard/subscriptions") ? "text-black" : ""}`}>
-                      <CircleDollarSign className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">Subscriptions</span>
-                    </span>
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/account">
-                    <span className={`flex items-center ${isActive("/account") ? "text-black" : ""}`}>
-                      <Settings className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">Account</span>
+                      <span className="text-2xl">Контакти</span>
                     </span>
                   </Link>
                 </DropdownMenuItem>
@@ -154,7 +138,7 @@ function NavbarText() {
                   <Link href="/login">
                     <span className={`flex items-center ${isActive("/user/login") ? "text-black" : ""}`}>
                       <LogOut className="mr-2 h-8 w-8" />
-                      <span className="text-2xl">Log out</span>
+                      <span className="text-2xl">Изход</span>
                     </span>
                   </Link>
                 </DropdownMenuItem>

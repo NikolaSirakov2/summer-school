@@ -14,6 +14,7 @@ const StudentDashboard: React.FC<StudentDashboardProps> = ({ grade }) => {
       {gradeInfo &&
         gradeInfo.subjects.map((subject) => (
           <Link
+            key={subject.id} 
             href={{
               pathname: "/dashboard/subject",
               query: { 
