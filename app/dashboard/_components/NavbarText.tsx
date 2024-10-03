@@ -83,7 +83,7 @@ function NavbarText() {
             ) : (
               <a
                 className="hidden lg:block rounded-md bg-destructive px-5 py-2.5 text-base font-medium text-white shadow hover:opacity-90"
-                href="/"
+                href="/login"
                 onClick={() => {
                   localStorage.removeItem("grade");
                 }}
